@@ -9,7 +9,7 @@ function App() {
  const checkURL = async () => {
   setLoading(true);
   try {
-    const res = await axios.post("http://127.0.0.1:5000/predict", {
+    const res = await axios.post("https://phishing-url-detector-2-d7yk.onrender.com", {
       url: url,
     });
     setResult(`${res.data.result} (${res.data.confidence}%)`);
