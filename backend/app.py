@@ -9,8 +9,8 @@ from feature_extraction import extract_features
 
 app = Flask(
     __name__,
-    static_folder="../frontend/dist",
-    static_url_path=""
+    static_folder="../frontend/build",
+    static_url_path="/"
 )
 
 CORS(app)
@@ -70,4 +70,4 @@ def predict():
         "confidence": round(confidence * 100, 2)
     })
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=10000)
